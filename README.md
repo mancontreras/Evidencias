@@ -64,13 +64,13 @@ Implica buscar si el nombre existe (recorrido lineal) y luego insertar.
 - **Caso promedio:** O(n) (Se recorre la mitad de la lista).
 - **Peor caso:** O(n) (No hay duplicados; se recorre toda la lista y se inserta al final).
 
-**4. Búsqueda de jugador (`buscarJugador`) [NUEVO]:**
+**4. Búsqueda de jugador (`buscarJugador`):**
 Búsqueda lineal por coincidencia de texto en el vector.
 - **Mejor caso:** O(1) (Encontrado al inicio).
 - **Caso promedio:** O(n) (Encontrado a la mitad o no existe).
 - **Peor caso:** O(n) (No encontrado o está al final).
 
-**5. Exportación de archivo (`saveAllPlayers`) [NUEVO]:**
+**5. Exportación de archivo (`saveAllPlayers`):**
 Recorre la estructura completa para escribirla en un nuevo CSV.
 - **Mejor caso:** O(n)
 - **Caso promedio:** O(n)
@@ -85,7 +85,7 @@ Recorrido lineal para imprimir en consola.
 **Complejidad final del programa:**
 - **Mejor caso:** O(n log n)
 - **Caso promedio** O(n log n)
-- **Peor caso** O(n<sup>2</sup>)
+- **Peor caso** O(n²)
 
 ---
 
