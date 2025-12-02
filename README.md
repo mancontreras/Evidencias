@@ -82,8 +82,10 @@ Recorrido lineal para imprimir en consola.
 - **Caso promedio:** O(n)
 - **Peor caso:** O(n)
 
-**Conclusión:**
-El costo total del programa está dominado por el ordenamiento: **O(n log n) en promedio**.
+**Complejidad final del programa:**
+- **Mejor caso:** O(n log n)
+- **Caso promedio** O(n log n)
+- **Peor caso** O(n<sup>2</sup>)
 
 ---
 
