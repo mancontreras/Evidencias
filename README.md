@@ -1,4 +1,5 @@
-# Proyecto Player_Sort - Avance 3 
+# Evidencias
+# Evidencia Proyecto
 **Autor:** Manuel Eduardo Contreras Flores (A01707142)
 
 ## Descripción
@@ -98,3 +99,76 @@ Recorrido lineal para imprimir en consola.
 2.  **Escritura (Persistencia y Reportes):**
     - **Modo Append:** Para el registro (Opción 6), se usa `std::ios::app` para añadir datos al final del archivo original de manera eficiente sin borrar el historial.
     - **Modo Write (Exportación):** Para la opción 8, se usa `std::ofstream` para crear un archivo nuevo (ej. `reporte.csv`) con los datos ya ordenados y limpios, permitiendo extraer la información procesada correctamente.
+  
+
+
+--- 
+
+# Evidencia Problemas
+
+* **Nombre:** Manuel Eduardo Contreras Flores
+* **Matrícula:** A01707142
+
+### Link a los videos: 
+https://drive.google.com/drive/folders/1m54BfxH0-rim8HqrqAoUlfV-y-rbRjxK?usp=sharing
+
+
+---
+
+### Descripción General
+Este repositorio contiene la evidencia práctica para las competencias **SICT0301**, **SICT0302** y **SICT0303**. Se seleccionaron y resolvieron tres problemas de la plataforma **LeetCode** para demostrar el dominio de:
+1.  Algoritmos de Ordenamiento.
+2.  Estructuras de Datos Lineales.
+3.  Estructuras de Datos No Lineales.
+
+* **Plataforma utilizada:** LeetCode
+* **Enlace a mi perfil:** https://leetcode.com/u/mcontreras20/
+
+---
+
+## 1. Algoritmos de Ordenamiento
+
+### Problema: [324. Wiggle Sort II] https://leetcode.com/problems/wiggle-sort-ii/description/
+**Objetivo:** Reordenar un arreglo de enteros para que cumpla con la secuencia de onda: `nums[0] < nums[1] > nums[2] < ...`.
+
+* **Estrategia (Toma de Decisiones):** Opté por transformar el arreglo desordenado en una estructura predecible utilizando un algoritmo de ordenamiento (**Introsort** vía `std::sort`). Una vez ordenados los datos, apliqué una técnica de **Intercalado Inverso** (Two Pointers) para distribuir la mitad pequeña en los índices pares (valles) y la mitad grande en los impares (picos), manejando así los duplicados de forma eficiente.
+
+* **Análisis de Complejidad Temporal:**
+    * **Mejor Caso:** $O(N \log N)$. Incluso si el arreglo está ordenado, el algoritmo debe verificar particiones.
+    * **Caso Promedio:** $O(N \log N)$. Es el estándar para Introsort.
+    * **Peor Caso:** $O(N \log N)$. Gracias a que `std::sort` usa **Introsort**, si detecta recursión profunda (riesgo de $O(N^2)$ de Quicksort), cambia automáticamente a Heapsort, garantizando siempre $N \log N$.
+
+---
+
+## 2. Estructuras Lineales
+
+### Problema: [213. House Robber II] https://leetcode.com/problems/house-robber-ii/description/
+**Objetivo:** Maximizar la ganancia al robar casas dispuestas en un círculo, con la restricción de no poder robar casas adyacentes.
+
+* **Estrategia (Toma de Decisiones):**
+    Al tratarse de una disposición circular, transformé el problema en dos escenarios lineales independientes (rompiendo el círculo en el primer o último elemento). Utilicé un **Vector** como estructura lineal fundamental para aplicar **Programación Dinámica**, almacenando los resultados óptimos paso a paso para evitar recálculos.
+
+* **Análisis de Complejidad Temporal:**
+    * **Mejor Caso:** $O(N)$.
+    * **Caso Promedio:** $O(N)$.
+    * **Peor Caso:** $O(N)$.
+    * *Justificación:* El algoritmo es determinista; independientemente de los valores de dinero en las casas, se deben recorrer todas las posiciones del vector linealmente para llenar la tabla de programación dinámica.
+
+---
+
+## 3. Estructuras No Lineales
+
+### Problema: [437. Path Sum III] https://leetcode.com/problems/path-sum-iii/
+**Objetivo:** Contar el número de caminos en un Árbol Binario que sumen un valor objetivo (`targetSum`), donde los caminos van hacia abajo pero pueden empezar en cualquier nodo.
+
+* **Estrategia (Toma de Decisiones):**
+    Dado que es una estructura jerárquica no lineal, implementé una solución basada en **Doble Recursión (DFS)**. La función principal recorre todos los nodos para proponerlos como "inicio", y una función auxiliar profundiza en las ramas para verificar la suma. Esta estrategia cubre exhaustivamente todas las rutas posibles en el árbol.
+
+
+* **Análisis de Complejidad Temporal:**
+    * **Mejor Caso / Promedio (Árbol Balanceado):** $O(N \log N)$. La altura del árbol es logarítmica, por lo que las búsquedas recursivas son eficientes.
+    * **Peor Caso (Árbol Desbalanceado/Lineal):** $O(N^2)$. Si el árbol es una línea recta (como una lista ligada), por cada nodo se recorren todos sus descendientes, resultando en un comportamiento cuadrático.
+
+---
+
+
